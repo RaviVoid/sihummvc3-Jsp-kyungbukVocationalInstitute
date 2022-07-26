@@ -19,7 +19,6 @@ import service.UpdateServiceImpl;
 import service.ViewServiceImpl;
 import service.WriterService;
 import service.WriterServiceImpl;
-import util.JavaUtil;
 
 /**
  * Servlet implementation class WriterController
@@ -49,7 +48,7 @@ public class UpdateController extends HttpServlet {
 		
 		request.setAttribute("vo", bvo);
 		
-		RequestDispatcher dispatcher = request.getRequestDispatcher("gallery/update.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("board/update.jsp");
 		dispatcher.forward(request, response);
 	}
 
@@ -69,7 +68,7 @@ public class UpdateController extends HttpServlet {
 		}
 		
 
-		int maxSize = 100*1024*1024;//10Mb
+		int maxSize = 10*1024*1024;//10Mb
 		String encType = "UTF-8";
 		
 		//넘어온 값을 변수에 저장
@@ -84,9 +83,6 @@ public class UpdateController extends HttpServlet {
 
 		String realFileName = multi.getOriginalFileName("upfile");
 		String realSaveFileName = multi.getFilesystemName("upfile");
-		
-		//썸네일만들기
-		JavaUtil.createThumbnail(realFolder+"/"+realSaveFileName, 256);
 		
 		if(realFileName == null) {
 			realFileName = multi.getParameter("realFileName");

@@ -12,7 +12,7 @@ public class UpdateMapper {
 		String url = "jdbc:mysql://localhost:3306/smart?characterEncoding=UTF-8&serverTimezone=Asia/Seoul";
 		String user = "root";
 		String password = "smart";
-		String sql = " UPDATE gallery SET title = ?, content = ?, writer = ? ";
+		String sql = " UPDATE board SET title = ?, content = ?, writer = ? ";
 		sql += " , realFileName = ?, realSaveFileName = ? ";
 		sql += " WHERE num = ? ";
 		Connection conn = null;

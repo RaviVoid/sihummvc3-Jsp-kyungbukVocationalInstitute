@@ -48,10 +48,6 @@ public class DeleteController extends HttpServlet {
 		if(delFile.exists()) {
 			delFile.delete();
 		}
-		File delFile2 = new File(realFolder, "sm_"+realSaveFileName);
-		if(delFile2.exists()) {
-			delFile2.delete();
-		}
 		
 		//글삭제
 		DeleteServiceImpl service = new DeleteServiceImpl();

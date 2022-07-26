@@ -14,7 +14,7 @@ public class DeleteMapper {
 		String url = "jdbc:mysql://localhost:3306/smart?characterEncoding=UTF-8&serverTimezone=Asia/Seoul";
 		String user = "root";
 		String password = "smart";
-		String sql = " DELETE FROM gallery WHERE num = ? ";
+		String sql = " DELETE FROM board WHERE num = ? ";
 		Connection conn = null;
 		PreparedStatement stmt = null;
 
